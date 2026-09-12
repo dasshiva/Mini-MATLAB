@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini MATLAB</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Mini MATLAB</h1>
+
+    <nav class="toolbar" aria-label="File and code actions">
+      <button id="new-button" type="button">Create</button>
+      <button id="open-button" type="button">Open</button>
+      <button id="save-button" type="button">Save</button>
+      <button id="run-button" class="run-button" type="button">Run</button>
+      <a class="toolbar-button" href="help.html">Help</a>
+    </nav>
+  </header>
+
+  <main class="work-area">
+    <section class="editor-panel" aria-labelledby="editor-title">
+      <h2 id="editor-title">Code</h2>
+      <textarea id="code-editor" spellcheck="false" aria-label="Code editor" placeholder="Write your code here..."></textarea>
+    </section>
+
+    <section class="graph-panel" aria-labelledby="graph-title">
+      <h2 id="graph-title">Graphs</h2>
+      <div id="graph-output" class="graph-output">Run some code to get started</div>
+    </section>
+  </main>
+
+  <dialog id="save-dialog" aria-labelledby="save-dialog-title">
+    <form id="save-form" method="dialog">
+      <h2 id="save-dialog-title">Save script</h2>
+      <label for="filename-input">Filename</label>
+      <input id="filename-input" type="text" value="script.m" required autocomplete="off">
+      <div class="dialog-buttons">
+        <button id="cancel-save-button" type="button">Cancel</button>
+        <button class="run-button" type="submit">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <input id="file-input" type="file" accept=".m,.txt" hidden>
+  <script src="js/vendor/plotly.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

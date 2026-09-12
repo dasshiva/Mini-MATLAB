@@ -1,0 +1,274 @@
+:root {
+  color: #20252b;
+  background: #f3f5f7;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+.app-header {
+  padding: 18px 28px 14px;
+  background: #ffffff;
+  border-bottom: 1px solid #d8dde2;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+button {
+  padding: 8px 16px;
+  color: #26313c;
+  background: #f7f9fa;
+  border: 1px solid #c8d0d7;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:hover,
+.toolbar-button:hover {
+  background: #e9eef2;
+}
+
+button:focus-visible,
+.toolbar-button:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 2px solid #2d73b9;
+  outline-offset: 2px;
+}
+
+button.run-button {
+  color: #ffffff;
+  background: #2d73b9;
+  border-color: #2d73b9;
+}
+
+button.run-button:hover {
+  background: #245e98;
+}
+
+.toolbar-button {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #26313c;
+  background: #f7f9fa;
+  border: 1px solid #c8d0d7;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.work-area {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+  gap: 18px;
+  min-height: calc(100vh - 126px);
+  padding: 22px 28px;
+}
+
+.editor-panel,
+.graph-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  background: #ffffff;
+  border: 1px solid #d8dde2;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+h2 {
+  padding: 12px 16px;
+  color: #4a5560;
+  border-bottom: 1px solid #e4e7ea;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#code-editor {
+  flex: 1;
+  width: 100%;
+  min-height: 360px;
+  padding: 16px;
+  resize: none;
+  color: #20252b;
+  background: #fbfcfd;
+  border: 0;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.graph-output {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  min-height: 0;
+  padding: 18px;
+  color: #69747e;
+  text-align: center;
+}
+
+.graph-output.plot-output {
+  display: block;
+  padding: 10px;
+  color: inherit;
+}
+
+.js-plotly-plot,
+.plot-container {
+  width: 100%;
+  min-height: 300px;
+}
+
+dialog {
+  width: min(360px, calc(100% - 32px));
+  padding: 0;
+  color: #20252b;
+  background: #ffffff;
+  border: 1px solid #c8d0d7;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgb(0 0 0 / 20%);
+}
+
+dialog::backdrop {
+  background: rgb(32 37 43 / 35%);
+}
+
+#save-form {
+  padding: 22px;
+}
+
+#save-form h2 {
+  margin: -22px -22px 20px;
+  padding: 14px 22px;
+}
+
+#save-form label {
+  display: block;
+  margin-bottom: 7px;
+  color: #4a5560;
+  font-size: 14px;
+}
+
+#filename-input {
+  width: 100%;
+  padding: 9px 10px;
+  color: #20252b;
+  background: #fbfcfd;
+  border: 1px solid #c8d0d7;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.help-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.help-header p {
+  margin: 6px 0 0;
+  color: #69747e;
+}
+
+.back-link {
+  color: #2d73b9;
+  white-space: nowrap;
+}
+
+.help-content {
+  width: min(900px, calc(100% - 56px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.help-content section {
+  margin-bottom: 30px;
+  padding: 22px 24px;
+  background: #ffffff;
+  border: 1px solid #d8dde2;
+  border-radius: 6px;
+}
+
+.help-content h2 {
+  margin: -22px -24px 18px;
+}
+
+.help-content p,
+.help-content li {
+  color: #4a5560;
+  line-height: 1.6;
+}
+
+.help-content code {
+  padding: 2px 4px;
+  color: #26313c;
+  background: #eef1f3;
+  border-radius: 3px;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.help-content pre {
+  padding: 14px 16px;
+  overflow-x: auto;
+  color: #dce7f0;
+  background: #20252b;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+.help-content pre code {
+  padding: 0;
+  color: inherit;
+  background: transparent;
+}
+
+@media (max-width: 700px) {
+  .app-header,
+  .work-area {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .work-area {
+    grid-template-columns: 1fr;
+  }
+
+  .help-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .help-content {
+    width: calc(100% - 32px);
+  }
+}

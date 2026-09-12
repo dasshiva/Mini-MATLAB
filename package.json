@@ -1,0 +1,8 @@
+{
+  "name": "mini-matlab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/matlab.test.js"
+  }
+}

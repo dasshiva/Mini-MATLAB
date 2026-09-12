@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini MATLAB Help</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="help-page">
+  <header class="app-header help-header">
+    <div>
+      <h1>Mini MATLAB Help</h1>
+      <p>A small guide to the currently supported MATLAB subset.</p>
+    </div>
+    <a class="back-link" href="index.html">Back to Mini MATLAB</a>
+  </header>
+
+  <main class="help-content">
+    <section>
+      <h2>Getting started</h2>
+      <ol>
+        <li>Write MATLAB-style code in the Code panel.</li>
+        <li>Click <strong>Run</strong> to parse and evaluate it.</li>
+        <li>Use <code>plot</code> to display a graph in the Graphs panel.</li>
+        <li>Use <strong>Create</strong>, <strong>Open</strong>, and <strong>Save</strong> for basic script files.</li>
+      </ol>
+      <p>The implementation runs in the browser. It is a focused subset, not full MATLAB.</p>
+    </section>
+
+    <section>
+      <h2>Comments and statements</h2>
+      <p>Comments begin with <code>%</code> and continue to the end of the line:</p>
+      <pre><code>% This is a comment
+x = 1;</code></pre>
+      <p>Statements can be separated by a newline or a semicolon. A semicolon suppresses displayed output.</p>
+    </section>
+
+    <section>
+      <h2>Numbers, variables, and constants</h2>
+      <pre><code>x = 5;
+y = 2.5;
+z = 1.2e-3;
+a = pi;
+b = e;</code></pre>
+      <p>Names may contain letters, numbers, and underscores, but must start with a letter or underscore. The built-in constants are <code>pi</code> and <code>e</code>.</p>
+    </section>
+
+    <section>
+      <h2>Arithmetic</h2>
+      <p>Supported scalar operators:</p>
+      <pre><code>a + b
+a - b
+a * b
+a / b
+a ^ b</code></pre>
+      <p>Unary positive and negative values, parentheses, and standard operator precedence are supported.</p>
+      <p>Element-wise operators are available for vectors and matrices:</p>
+      <pre><code>y = x .* x;
+y = x ./ 2;
+y = x .^ 2;</code></pre>
+    </section>
+
+    <section>
+      <h2>Vectors, matrices, and ranges</h2>
+      <pre><code>row = [1 2 3];
+column = [1; 2; 3];
+A = [1 2; 3 4];
+x = 1:5;
+y = 0:0.1:1;</code></pre>
+      <p>Spaces or commas separate values in a row. Semicolons separate matrix rows. Matrix multiplication uses <code>*</code>.</p>
+    </section>
+
+    <section>
+      <h2>Mathematical functions</h2>
+      <p>The following functions are supported and can operate on scalar values or matrices:</p>
+      <p><code>sin</code>, <code>cos</code>, <code>tan</code>, <code>exp</code>, <code>log</code>, <code>sqrt</code>, <code>abs</code>, <code>floor</code>, <code>ceil</code>, and <code>round</code>.</p>
+      <pre><code>x = linspace(0, 2*pi, 100);
+y = sin(x);</code></pre>
+      <p>Additional functions:</p>
+      <ul>
+        <li><code>linspace(start, stop, count)</code></li>
+        <li><code>zeros(rows)</code> or <code>zeros(rows, columns)</code></li>
+        <li><code>ones(rows)</code> or <code>ones(rows, columns)</code></li>
+        <li><code>size(value)</code></li>
+        <li><code>length(value)</code></li>
+        <li><code>sum(vector)</code></li>
+        <li><code>min(vector)</code></li>
+        <li><code>max(vector)</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Plotting</h2>
+      <p>Plot a vector against automatically generated one-based x-values:</p>
+      <pre><code>y = [1 4 2 5];
+plot(y);</code></pre>
+      <p>Or provide both x and y vectors:</p>
+      <pre><code>x = linspace(0, 2*pi, 100);
+y = sin(x);
+plot(x, y);</code></pre>
+      <p>Plot appearance settings:</p>
+      <pre><code>title('Sine Wave');
+xlabel('x');
+ylabel('sin(x)');
+grid on;</code></pre>
+      <p>Multiple <code>plot</code> calls create multiple plotted series. Plotly provides zooming, panning, hover values, and image export controls.</p>
+    </section>
+
+    <section>
+      <h2>File controls</h2>
+      <ul>
+        <li><strong>Create</strong> clears the editor and resets the graph message.</li>
+        <li><strong>Open</strong> loads a local <code>.m</code> or <code>.txt</code> file.</li>
+        <li><strong>Save</strong> opens a filename dialog and downloads the current code.</li>
+        <li><strong>Run</strong> processes the current editor contents.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Example</h2>
+      <pre><code>% Plot a sine wave
+x = linspace(0, 2*pi, 200);
+y = sin(x);
+plot(x, y);
+title('Sine Wave');
+xlabel('x');
+ylabel('sin(x)');
+grid on;</code></pre>
+    </section>
+
+    <section>
+      <h2>Current limitations</h2>
+      <p>The current subset does not include conditionals, loops, user-defined functions, indexing, structures, cell arrays, complex numbers, symbolic math, or general MATLAB file I/O.</p>
+    </section>
+  </main>
+</body>
+</html>
